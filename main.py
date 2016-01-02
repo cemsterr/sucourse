@@ -51,7 +51,8 @@ try:
         for t in tab: # for each course, check each tab and print if there's an unread section
             span = t.find_element_by_tag_name("span")
             tabname = span.text
-            if span.get_attribute("style") == u'color: red; ': # color red means there's an unread notification
+            # color red means there's an unread notification
+            if span.get_attribute("style") == u'color: red;' or span.get_attribute("style") == u'color: red; ':
                 print("\tNew: {}".format(tabname))
 
         print("\n")
